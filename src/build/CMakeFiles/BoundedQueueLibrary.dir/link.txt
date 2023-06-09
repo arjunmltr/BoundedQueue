@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBoundedQueueLibrary.a CMakeFiles/BoundedQueueLibrary.dir/bounded_queue.cpp.o CMakeFiles/BoundedQueueLibrary.dir/main.cpp.o
+/usr/bin/ranlib libBoundedQueueLibrary.a

@@ -1,0 +1,133 @@
+\hypertarget{classQueue}{}\doxysection{Queue$<$ T $>$ Class Template Reference}
+\label{classQueue}\index{Queue$<$ T $>$@{Queue$<$ T $>$}}
+
+
+A thread-\/safe queue implementation with a maximum size.  
+
+
+
+
+{\ttfamily \#include $<$bounded\+\_\+queue.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQueue_af73bcc3c170a90883da0fe79848ec971}{Queue}} (int size)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classQueue}{Queue}} object with the specified maximum size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQueue_aed15d1d40efe83aa9cab1250c2b5fc12}{Push}} (T element)
+\begin{DoxyCompactList}\small\item\em Pushes an element to the queue. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classQueue_a5897608241a6c919354cdc1a1815c0ae}{Pop}} ()
+\begin{DoxyCompactList}\small\item\em Pops an element from the queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQueue_a0c72c324d1be97adf964047241e3f7b1}{Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current count of elements in the queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classQueue_aa8e105d7da93ccde452e030fc2e2e1a3}{Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum size of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Queue$<$ T $>$}
+
+A thread-\/safe queue implementation with a maximum size. 
+
+This class provides a thread-\/safe queue with a maximum size. It supports push and pop operations and ensures thread safety using mutex and condition variables.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of elements stored in the queue. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQueue_af73bcc3c170a90883da0fe79848ec971}\label{classQueue_af73bcc3c170a90883da0fe79848ec971}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!Queue@{Queue}}
+\index{Queue@{Queue}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Queue()}{Queue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::\mbox{\hyperlink{classQueue}{Queue}} (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classQueue}{Queue}} object with the specified maximum size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The maximum size of the queue. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQueue_a0c72c324d1be97adf964047241e3f7b1}\label{classQueue_a0c72c324d1be97adf964047241e3f7b1}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!Count@{Count}}
+\index{Count@{Count}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current count of elements in the queue. 
+
+\begin{DoxyReturn}{Returns}
+The current count of elements in the queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQueue_a5897608241a6c919354cdc1a1815c0ae}\label{classQueue_a5897608241a6c919354cdc1a1815c0ae}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!Pop@{Pop}}
+\index{Pop@{Pop}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pops an element from the queue. 
+
+This function pops an element from the front of the queue. If the queue is empty, it waits for a specified timeout duration until an element becomes available or throws an exception if the timeout expires.
+
+\begin{DoxyReturn}{Returns}
+The element popped from the queue.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & an exception if the queue is empty and the timeout expires. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classQueue_aed15d1d40efe83aa9cab1250c2b5fc12}\label{classQueue_aed15d1d40efe83aa9cab1250c2b5fc12}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::Push (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes an element to the queue. 
+
+This function pushes the specified element to the queue. If the queue is already full, it waits for a specified timeout duration until space becomes available or throws an error if the timeout expires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The element to push to the queue. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQueue_aa8e105d7da93ccde452e030fc2e2e1a3}\label{classQueue_aa8e105d7da93ccde452e030fc2e2e1a3}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the maximum size of the queue. 
+
+\begin{DoxyReturn}{Returns}
+The maximum size of the queue. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+bounded\+\_\+queue.\+h\end{DoxyCompactItemize}

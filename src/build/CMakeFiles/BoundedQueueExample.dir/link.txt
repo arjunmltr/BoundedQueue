@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage --coverage CMakeFiles/BoundedQueueExample.dir/main.cpp.o -o BoundedQueueExample  /usr/local/lib/libgtest.a -lpthread 
