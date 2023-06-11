@@ -25,28 +25,33 @@ int main() {
 
   // Writing thread
   
-  std::thread writer([&]() {
+   std::thread writer([&]() {
 
    queue.Push(1);
+   std::this_thread::sleep_for(std::chrono::seconds(2));
    queue.Push(2);
    queue.Push(3);
-   std::this_thread::sleep_for(std::chrono::seconds(2)); 
    queue.Push(4);
-   std::this_thread::sleep_for(std::chrono::seconds(1)); 
+   std::this_thread::sleep_for(std::chrono::milliseconds(600)); 
    queue.Push(5); 
+   std::this_thread::sleep_for(std::chrono::seconds(3));
+   queue.Push(6);
+   queue.Push(7);
+   queue.Push(8);
 
   });
 
   // Reading thread
    std::thread reader([&]() {
     
+   pop(queue);
    std::this_thread::sleep_for(std::chrono::seconds(3));   
    pop(queue);
    pop(queue);
-   std::this_thread::sleep_for(std::chrono::seconds(2));
    pop(queue);
    pop(queue);
-   pop(queue); 
+   std::this_thread::sleep_for(std::chrono::milliseconds(600)); 
+   pop(queue);
 
    });
 
